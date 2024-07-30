@@ -15,18 +15,35 @@ import hello.core.order.OrderServiceImpl;
 @Configuration
 public class AppConfig {
 
+	// @Bean memberService -> new MemoryMemberRepository()
+	// @Bean orderService -> new MemoryMemberRepository()
+
+	// call AppConfig.memberService
+	// call AppConfig.memberRepository
+	// call AppConfig.memberRepository
+	// call AppConfig.memberService
+	// call AppConfig.memberRepository
+
+	// call AppConfig.memberService
+	// call AppConfig.memberRepository
+	// call AppConfig.orderService
+
+
 	@Bean
 	public MemberService memberService() {
+		System.out.println("call AppConfig.memberService");
 		return new MemberServiceImpl(MemberRepository());
 	}
 
 	@Bean
 	public MemberRepository MemberRepository() {
+		System.out.println("call AppConfig.MemberRepository");
 		return new MemoryMemberRepository();
 	}
 
 	@Bean
 	public OrderService orderService() {
+		System.out.println("call AppConfig.orderService");
 		return new OrderServiceImpl(MemberRepository(), discountPolicy());
 	}
 
