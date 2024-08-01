@@ -10,11 +10,14 @@ import hello.core.member.MemberRepository;
 @Component
 public class OrderServiceImpl implements OrderService{
 
-	private final MemberRepository memberRepository;
-	private final DiscountPolicy discountPolicy;
+	private final   MemberRepository memberRepository;
+	private final   DiscountPolicy discountPolicy;
+
+
 
 	@Autowired
-	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {;
+		System.out.println("memberRepository1 = " + memberRepository);
 		this.memberRepository = memberRepository;
 		this.discountPolicy = discountPolicy;
 	}

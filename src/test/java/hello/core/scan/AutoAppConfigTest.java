@@ -8,8 +8,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import hello.core.AutoAppConfig;
+import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
+import hello.core.order.OrderServiceImpl;
 
 public class AutoAppConfigTest {
 
@@ -19,5 +21,15 @@ public class AutoAppConfigTest {
 
 		MemberServiceImpl memberService = ac.getBean(MemberServiceImpl.class);
 		assertThat(memberService).isInstanceOf(MemberService.class);
+
+		OrderServiceImpl bean = ac.getBean(OrderServiceImpl.class);
+		MemberRepository memberRepository = bean.getMemberRepository();
+		System.out.println("memberRepository = " + memberRepository);
+	}
+
+	@Test
+	void fieldInjectionTest() {
+		OrderServiceImpl orderService = new OrderServiceImpl();
+		orderService.createOrder(1L, "itemA", 10000);
 	}
 }
