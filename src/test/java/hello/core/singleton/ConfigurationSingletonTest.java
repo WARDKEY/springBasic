@@ -21,10 +21,11 @@ public class ConfigurationSingletonTest {
 		OrderServiceImpl orderService = ac.getBean("orderService", OrderServiceImpl.class);
 
 		// 주석 처리한 것들 이상하게 오류남
-		// MemberRepository memberRepository = ac.getBean("memberRepository", MemberRepository.class);
+		MemberRepository memberRepository = ac.getBean("memberRepository", MemberRepository.class);
 
 		MemberRepository memberRepository1 = memberService.getMemberRepository();
 		MemberRepository memberRepository2 = orderService.getMemberRepository();
+
 		System.out.println("memberService -> memberRepository = " + memberRepository1);
 		System.out.println("orderService -> memberRepository = " + memberRepository2);
 		// System.out.println("memberRepository = " + memberRepository);

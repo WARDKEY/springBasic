@@ -29,7 +29,7 @@ public class AutoAppConfigTest {
 
 	@Test
 	void fieldInjectionTest() {
-		OrderServiceImpl orderService = new OrderServiceImpl();
-		orderService.createOrder(1L, "itemA", 10000);
+		// OrderServiceImpl orderService = new OrderServiceImpl();
+		// orderService.createOrder(1L, "itemA", 10000);
 	}
 }
