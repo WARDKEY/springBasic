@@ -10,8 +10,8 @@ import hello.core.member.MemberRepository;
 @Component
 public class OrderServiceImpl implements OrderService{
 
-	private final   MemberRepository memberRepository;
-	private final   DiscountPolicy discountPolicy;
+	private final MemberRepository memberRepository;
+	private final DiscountPolicy discountPolicy;
 
 
 
