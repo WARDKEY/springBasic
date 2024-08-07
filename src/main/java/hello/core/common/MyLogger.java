@@ -3,14 +3,15 @@ package hello.core.common;
 import java.util.UUID;
 
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
 @Component
-@Scope("request")
-public class MyLogger {
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
+public class MyLogger {	// 가짜인 프록시를 만듦
 	private String uuid;
 	private String requestURL;
 
